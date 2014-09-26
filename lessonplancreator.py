@@ -37,6 +37,10 @@ class LessonPlanCreator(object):
         self.page_two_third_row = {0: '\n%s\n%s\n%s\n%s\n%s\n%s\n%s' % ('S', 't', 'a', 'r', 't', 'e', 'r'), 1: '', 2: '', 3: '', 4: '', 5: ''}
         self.page_two_fourth_row = {0: '\n%s\n%s\n%s\n%s\n%s\n%s' % ('', 'M', 'a', 'i', 'n', ''), 1: '', 2: '', 3: '', 4: '', 5: ''}
         self.page_two_fifth_row = {0: '\n%s\n%s\n%s\n%s\n%s\n%s\n%s' % ('P', 'l', 'e', 'n', 'a', 'r', 'y'), 1: '', 2: '', 3: '', 4: '', 5: ''}
+        self.page_two_seventh_row = {0: 'A', 1: 'Sharing Lesson objectives\n%s\n%s' % ('', ''), 2: 'Planning for learning', 3: 'Key Questions', 4: 'Hints & Tips', 5: 'Sharing marking criteria', 6: 'Self-assessment'}
+        self.page_two_eighth_row = {0: 'F', 1: "Pupils made aware of 'big picture'\n%s\n%s" % ('', ''), 2: 'Modelling', 3: "Bloom's Taxonomy", 4: 'RAG rating', 5: 'Peer marking', 6: 'Target setting & next steps'}
+        self.page_two_ninth_row = {0: 'L', 1: 'Use of Prior learning\n%s\n%s' % ('', ''), 2: 'Explanations focus on learning', 3: 'Hinge Point Questions', 4: 'Adaption for pupil needs', 5: 'Peer assessment', 6: 'Teacher feedback'}
+        self.page_two_tenth_row = {0: '(T6)', 1: 'Peer Feedback\n%s\n%s' % ('', ''), 2: 'Appropriate pitch & challenge', 3: 'Link to lesson outcomes', 4: '', 5: '', 6: ''}
     
     def page_one_creator(self):
         
@@ -68,6 +72,10 @@ class LessonPlanCreator(object):
         self.page_two_third_row_table = self.document.add_table(rows = 1, cols = 6, style = 'p2thirdrow')
         self.page_two_fourth_row_table = self.document.add_table(rows = 1, cols = 6, style = 'p2fourthrow')
         self.page_two_fifth_row_table = self.document.add_table(rows = 1, cols = 6, style = 'p2fifthrow')
+        self.page_two_seventh_row_table = self.document.add_table(rows = 1, cols = 7, style = 'p2seventhrow')
+        self.page_two_eighth_row_table = self.document.add_table(rows = 1, cols = 7, style = 'p2eighthrow')
+        self.page_two_ninth_row_table = self.document.add_table(rows = 1, cols = 7, style = 'p2ninthrow')
+        self.page_two_tenth_row_table = self.document.add_table(rows = 1, cols = 7, style = 'p2tenthrow')
 
     def page_one_fill(self):
         
@@ -259,7 +267,71 @@ class LessonPlanCreator(object):
         self.page_two_fifth_row_cells[4].text = self.page_two_fifth_row[4]
         self.page_two_fifth_row_cells[4].width = Cm(6.53)
         self.page_two_fifth_row_cells[5].text = self.page_two_fifth_row[5]
-        self.page_two_fifth_row_cells[5].width = Cm(4.72)        
+        self.page_two_fifth_row_cells[5].width = Cm(4.72)
+        
+        self.page_two_seventh_row_cells = self.page_two_seventh_row_table.rows[0].cells
+        self.page_two_seventh_row_cells[0].text = self.page_two_seventh_row[0]
+        self.page_two_seventh_row_cells[0].width = Cm(1.42)
+        self.page_two_seventh_row_cells[1].text = self.page_two_seventh_row[1]
+        self.page_two_seventh_row_cells[1].width = Cm(4.416)
+        self.page_two_seventh_row_cells[2].text = self.page_two_seventh_row[2]
+        self.page_two_seventh_row_cells[2].width = Cm(4.416)
+        self.page_two_seventh_row_cells[3].text = self.page_two_seventh_row[3]
+        self.page_two_seventh_row_cells[3].width = Cm(4.416)
+        self.page_two_seventh_row_cells[4].text = self.page_two_seventh_row[4]
+        self.page_two_seventh_row_cells[4].width = Cm(4.416)
+        self.page_two_seventh_row_cells[5].text = self.page_two_seventh_row[5]
+        self.page_two_seventh_row_cells[5].width = Cm(4.416)
+        self.page_two_seventh_row_cells[6].text = self.page_two_seventh_row[6]
+        self.page_two_seventh_row_cells[6].width = Cm(4.416)
+        
+        self.page_two_eighth_row_cells = self.page_two_eighth_row_table.rows[0].cells
+        self.page_two_eighth_row_cells[0].text = self.page_two_eighth_row[0]
+        self.page_two_eighth_row_cells[0].width = Cm(1.42)
+        self.page_two_eighth_row_cells[1].text = self.page_two_eighth_row[1]
+        self.page_two_eighth_row_cells[1].width = Cm(4.416)
+        self.page_two_eighth_row_cells[2].text = self.page_two_eighth_row[2]
+        self.page_two_eighth_row_cells[2].width = Cm(4.416)
+        self.page_two_eighth_row_cells[3].text = self.page_two_eighth_row[3]
+        self.page_two_eighth_row_cells[3].width = Cm(4.416)
+        self.page_two_eighth_row_cells[4].text = self.page_two_eighth_row[4]
+        self.page_two_eighth_row_cells[4].width = Cm(4.416)
+        self.page_two_eighth_row_cells[5].text = self.page_two_eighth_row[5]
+        self.page_two_eighth_row_cells[5].width = Cm(4.416)
+        self.page_two_eighth_row_cells[6].text = self.page_two_eighth_row[6]
+        self.page_two_eighth_row_cells[6].width = Cm(4.416)
+        
+        self.page_two_ninth_row_cells = self.page_two_ninth_row_table.rows[0].cells
+        self.page_two_ninth_row_cells[0].text = self.page_two_ninth_row[0]
+        self.page_two_ninth_row_cells[0].width = Cm(1.42)
+        self.page_two_ninth_row_cells[1].text = self.page_two_ninth_row[1]
+        self.page_two_ninth_row_cells[1].width = Cm(4.416)
+        self.page_two_ninth_row_cells[2].text = self.page_two_ninth_row[2]
+        self.page_two_ninth_row_cells[2].width = Cm(4.416)
+        self.page_two_ninth_row_cells[3].text = self.page_two_ninth_row[3]
+        self.page_two_ninth_row_cells[3].width = Cm(4.416)
+        self.page_two_ninth_row_cells[4].text = self.page_two_ninth_row[4]
+        self.page_two_ninth_row_cells[4].width = Cm(4.416)
+        self.page_two_ninth_row_cells[5].text = self.page_two_ninth_row[5]
+        self.page_two_ninth_row_cells[5].width = Cm(4.416)
+        self.page_two_ninth_row_cells[6].text = self.page_two_ninth_row[6]
+        self.page_two_ninth_row_cells[6].width = Cm(4.416)
+        
+        self.page_two_tenth_row_cells = self.page_two_tenth_row_table.rows[0].cells
+        self.page_two_tenth_row_cells[0].text = self.page_two_tenth_row[0]
+        self.page_two_tenth_row_cells[0].width = Cm(1.42)
+        self.page_two_tenth_row_cells[1].text = self.page_two_tenth_row[1]
+        self.page_two_tenth_row_cells[1].width = Cm(4.416)
+        self.page_two_tenth_row_cells[2].text = self.page_two_tenth_row[2]
+        self.page_two_tenth_row_cells[2].width = Cm(4.416)
+        self.page_two_tenth_row_cells[3].text = self.page_two_tenth_row[3]
+        self.page_two_tenth_row_cells[3].width = Cm(4.416)
+        self.page_two_tenth_row_cells[4].text = self.page_two_tenth_row[4]
+        self.page_two_tenth_row_cells[4].width = Cm(4.416)
+        self.page_two_tenth_row_cells[5].text = self.page_two_tenth_row[5]
+        self.page_two_tenth_row_cells[5].width = Cm(4.416)
+        self.page_two_tenth_row_cells[6].text = self.page_two_tenth_row[6]
+        self.page_two_tenth_row_cells[6].width = Cm(4.416)        
           
     def savefile(self):
         
